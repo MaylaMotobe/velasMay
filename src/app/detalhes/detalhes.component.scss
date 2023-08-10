@@ -1,0 +1,88 @@
+@import "../app.component.scss";
+
+.tudo{
+    background-color: $cor-fundo;
+}
+.container{
+    width: 1140px;
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+    min-height: calc(100vh - 234px);// min-height: rodape já fica la em baixo, sem precisar ter o conteúdo no corpo.
+    h2{
+        padding: 50px 0px 10px 0px; // top - right - bottom - left
+        font-family: $fonte-secundaria;
+        font-size: 60px;
+        color: $cor-secundaria;
+        line-height: $extra-grande;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .detalhes-produto{
+        display: flex;
+        gap: 50px;
+        img{
+            margin-bottom: 30px;
+            border: 1px solid $preto;
+            border-radius: 30px;
+            box-shadow: $card-shadow;
+            transition: $card-transition;
+            &:hover {
+            box-shadow: $card-shadow-hover;
+            } 
+        }
+        .vela{
+            width: 800px;
+            height: 600px;
+        }
+        .descricao{
+            width: 100%;
+            p{
+                padding-left: 25px;
+                text-align: center;
+            }
+            .compre{
+                font-size: $extra-grande;
+                margin-top: 35px;
+                padding: 20px;
+                border: 1px solid $preto;
+                border-radius: 20px;
+                font-weight: bold;
+                background-color: #D9A78B;
+                &:hover{
+                    background-color: #F2C6B6 ;
+                }
+            }
+            ul{
+                font-family: $fonte-secundaria;
+                color: $cinza-medio;
+                font-size: $media;
+                line-height: $grande;
+                text-align: justify;
+                padding-top: 20px;
+            }
+            li{
+                padding-top: 10px;
+                font-family: $fonte-secundaria;
+            }
+            .avaliacao{
+                border: none;
+                box-shadow: none;
+                margin-left: 180px;
+                width: 30%;
+            }
+            h3, h4{
+                text-align: center;
+            }
+            h4{
+                width: 20%;
+                margin-left: 197px;
+                border: 1px solid $preto;
+                border-radius: 50px;
+                &:hover{
+                    background-color: $cor-principal;
+                }
+            }
+        }
+    }
+}

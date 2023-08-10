@@ -1,0 +1,127 @@
+@import "../app.component.scss";
+
+main{
+  background-color: $cor-fundo;
+}
+.container{
+    width: 1140px;
+    display: block;
+    margin: auto;
+    h2{
+        font-family: $fonte-logo;
+        font-size: $grande;
+        color: $preto;
+        text-align: center;
+        padding-top: 50px;
+    }
+    mat-grid-tile {
+       mat-card{
+        background-color: $branco;
+        margin: 7px;
+        box-shadow: $card-shadow;
+        transition: $card-transition;
+        &:hover {
+            box-shadow: $card-shadow-hover;
+        }
+        img {
+            width: 70%;
+            margin-left: 50px;
+        }
+        .especiais{
+          margin-top: 10px;
+        }
+        mat-card-content {
+            h3{
+                font-family: $fonte-secundaria;
+                font-size: $grande;
+                color: $cinza-escuro;
+                padding-top: 15px;
+                text-align: center;
+            }
+            ul{
+                padding-top: 0px;
+                padding-left: 0px;
+                padding-bottom: 20px;
+                list-style-type: none;
+                li{
+                    font-family: $fonte-secundaria;
+                    font-size: $media;
+                    text-align: center;
+                    line-height: $grande; //espaçamento entre as linhas do texto.
+                }
+                .preco{
+                  font-size: $grande;
+                  font-weight: bold;
+                  color: red;
+                }
+            }
+        }
+        mat-card-actions {
+            padding-bottom: 10px;
+            gap:10px;
+            .favorite {
+                width: 20%;
+                background-color: $branco;
+                border: 1px solid $cor-principal;
+                mat-icon {
+                    color: $cor-principal;
+                }
+            }
+            .favorite-checked {
+                width: 20%;
+                background-color: $cor-principal;
+            }
+            button{
+                display: block;
+                width: 80%;
+                height: 48px;
+                cursor: pointer;
+                border: none;
+                border-radius: 4px;
+                background-color: #D9A78B;
+                color: $preto;
+                font-family: $fonte-secundaria;
+                font-size: $media;
+                &:hover{
+                  background-color: #F2C6B6;
+                  transition: $card-transition;
+                }
+            }
+        }
+       }
+    }
+    #lista-velas{
+        padding-top: 50px;
+        text-align: center;
+    }
+}
+//CARROSSEL//
+.item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .botoes-controle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  
+  .botoes-controle button {
+    background: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+  }
+  
+  .botoes-controle button.ativo {
+    background: #D9A78B;
+    cursor: default;
+  }
+  
+

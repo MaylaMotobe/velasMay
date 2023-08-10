@@ -1,0 +1,35 @@
+@import "../app.component.scss";
+
+mat-toolbar {
+    background-color: #F2C6B6;
+    color: $preto;
+
+    .container{
+        width: 1140px;
+       display: flex;
+       margin: auto; //centralizar 
+        h1 {
+            font-family: $fonte-logo;
+            font-size: $grande;
+            color: $preto;
+            padding-top: 20px;
+            cursor: pointer; 
+        }
+        .menu-spacer {
+            flex: 1 1 auto;
+        }
+        nav{
+            margin-right: 200px;
+            margin-top: 10px;
+        }
+        .texto-menu{
+            margin-top: 7px;
+        }
+        button {
+            margin-top: 5px;
+            &:hover {
+                color: $cor-secundaria;
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import "../app.component.scss";
+
+.tudo {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: $cor-fundo;
+    
+    .container{
+        min-height: calc(100vh - 166px);
+    }
+    h1{
+        text-align: center;
+        font-family: $fonte-logo;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        font-size: $extra-grande;
+        color: $cor-secundaria;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: rem;
+        width: 500px;
+        margin: 0 auto;
+        border: 1px solid $preto;
+        padding: 50px;
+        border-radius: 20px;
+        margin: 7px;
+        box-shadow: $card-shadow;
+        transition: $card-transition;
+        &:hover {
+            box-shadow: $card-shadow-hover;
+        }
+    }
+    label{
+        font-size: $grande;
+    }
+    input, select, textarea{
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    button{
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #D9A78B;
+        font-size: 1.1rem;
+        color: $branco;
+        cursor: pointer;
+        &:hover{
+            background-color: #F2C6B6;
+            transition: 2.5;
+            color: $preto;
+        }
+    }
+}

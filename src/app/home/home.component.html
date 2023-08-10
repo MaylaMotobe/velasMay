@@ -1,0 +1,142 @@
+<!-- Carrossel -->
+<div class="item" [style.backgroundImage]="'url(' + imagens[indexImagemAtiva] + ')'"></div>
+
+<!-- Botões de controle -->
+<div class="botoes-controle">
+  <button *ngFor="let imagem of imagens; index as i"[class.ativo]="i === indexImagemAtiva"(click)="pararTimer(); ativarImagem(i)"></button></div>
+<img *ngFor="let imagem of imagens" [src]="imagem" width="1" height="1" style="opacity: 0; position: fixed"/>
+<!--HOME CARDS-->
+<main>
+<div class="container">
+  <section id="velas-favoritos">
+      <h2>Os Queridinhos:</h2>
+      <mat-grid-list cols="3" rowHeight="3:4">
+        <!-- FAVORITOS -->
+          <div *ngFor="let vela of velas; let i = index">
+              <mat-grid-tile *ngIf="vela.favorito">
+                  <mat-card>
+                      <img mat-card-image [src]="vela.foto" [alt]="vela.titulo">
+                      <mat-card-content>
+                        <h3>{{ vela.titulo }}</h3>
+                        <ul>
+                            <li>Gramas: {{ vela.gramas + "g" }}</li>
+                            <li class="preco"> {{ "R$ " + vela.preco}}</li>
+                        </ul>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <button [class]="vela.favorito === false ? 'favorite' : 'favorite-checked'" [title]="vela.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'" mat-button (click)="toogleFavorito(i)"><mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon></button>
+                        <button mat-button (click)="verDetalhes(vela.id)">Mais detalhes</button>
+                      </mat-card-actions>
+              </mat-card>
+          </mat-grid-tile>
+      </div>
+      <div *ngFor="let velaespecial of velasEspeciais; let i = index">
+        <mat-grid-tile *ngIf="velaespecial.favorito">
+            <mat-card>
+                <img mat-card-image [src]="velaespecial.foto" [alt]="velaespecial.titulo">
+                <mat-card-content>
+                  <h3>{{ velaespecial.titulo }}</h3>
+                  <ul>
+                      <li>Peso: {{ velaespecial.peso + "g" }}</li>
+                      <li class="preco"> {{ "R$ " + velaespecial.preco}}</li>
+                  </ul>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button [class]="velaespecial.favorito === false ? 'favorite' : 'favorite-checked'" [title]="velaespecial.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'" mat-button (click)="toogleFavorito2(i)"><mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon></button>
+                  <button mat-button (click)="verDetalhes(velaespecial.id)">Mais detalhes</button>
+                </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </div>
+        <div *ngFor="let oleo of oleos; let i = index">
+            <mat-grid-tile *ngIf="oleo.favorito">
+                <mat-card>
+                    <img mat-card-image [src]="oleo.foto" [alt]="oleo.titulo">
+                    <mat-card-content>
+                    <h3>{{ oleo.titulo }}</h3>
+                    <ul>
+                        <li>Peso: {{ oleo.peso + "g" }}</li>
+                        <li class="preco"> {{ "R$ " + oleo.preco}}</li>
+                    </ul>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    <button [class]="oleo.favorito === false ? 'favorite' : 'favorite-checked'" [title]="oleo.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'" mat-button (click)="toogleFavorito3(i)"><mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon></button>
+
+                    <button mat-button (click)="verDetalhes(oleo.id)">Mais detalhes</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</section>
+<!-- FIM DE FAVORITOS -->
+
+<!--INICIO PRODUTOS-->
+  <section id="lista-velas">
+      <h2>Aromas Naturais: </h2>
+     
+  <mat-grid-list cols="3" rowHeight= "3:4">
+      <mat-grid-tile *ngFor="let vela of velas; let i = index">
+          <mat-card>
+              <img mat-card-image [src]="vela.foto" [alt]="vela">
+              <mat-card-content>
+                  <h3>{{ vela.titulo }}</h3>
+                  <ul>
+                      <li>Gramas: {{ vela.gramas + "g" }}</li>
+                      <li class="preco"> {{ "R$ " + vela.preco}}</li>
+                  </ul>
+              </mat-card-content>
+              <mat-card-actions>
+                    <button [class]="vela.favorito === false ? 'favorite' : 'favorite-checked'" [title]="vela.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'" mat-button (click)="toogleFavorito(i)"><mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon></button>             
+                    <button mat-button (click)="verDetalhes(vela.id)">Mais detalhes</button>
+              </mat-card-actions>
+            </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+  </section>
+
+<section id="lista-velas-especiais">
+  <h2>Velas Especiais: </h2>
+    <mat-grid-list cols="3" rowHeight= "3:4">
+        <mat-grid-tile *ngFor="let velaespecial of velasEspeciais; let i = index">
+            <mat-card>
+                <img class="especiais" mat-card-image [src]="velaespecial.foto" [alt]="velaespecial">
+                <mat-card-content>
+                    <h3>{{ velaespecial.titulo }}</h3>
+                    <ul>
+                        <li>Peso: {{ velaespecial.peso + "ml" }}</li>
+                        <li class="preco"> {{ "R$ " + velaespecial.preco}}</li>
+                    </ul>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button [class]="velaespecial.favorito === false ? 'favorite' : 'favorite-checked'" [title]="velaespecial.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'" mat-button (click)="toogleFavorito2(i)"><mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon></button>
+                    <button mat-button (click)="verdetalhes(velaespecial.id)">Mais detalhes</button>
+                </mat-card-actions>
+                </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>
+
+<section id="lista-oleos">
+  <h2>Óleos Essenciais: </h2>
+    <mat-grid-list cols="3" rowHeight= "3:4">
+    <mat-grid-tile *ngFor="let oleo of oleos; let i = index">
+        <mat-card>
+            <img mat-card-image [src]="oleo.foto" [alt]="oleo">
+            <mat-card-content>
+                <h3>{{ oleo.titulo }}</h3>
+                <ul>
+                    <li>Peso: {{ oleo.peso + "ml" }}</li>
+                    <li class="preco"> {{ "R$ " + oleo.preco}}</li>
+                </ul>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [class]="oleo.favorito === false ? 'favorite' : 'favorite-checked'" [title]="oleo.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'" mat-button (click)="toogleFavorito3(i)"><mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon></button>
+                <button mat-button (click)="ver_Detalhes(oleo.id)">Mais detalhes</button>
+            </mat-card-actions>
+    </mat-card>
+    </mat-grid-tile>
+    </mat-grid-list>
+</section>
+</div>
+</main>

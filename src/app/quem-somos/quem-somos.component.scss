@@ -1,0 +1,44 @@
+@import "../app.component.scss";
+
+.tudo{
+    background-color: $cor-fundo;
+}
+.container{
+    width: 1140px;
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+    min-height: calc(100vh - 234px);// min-height: rodape já fica la em baixo, sem precisar ter o conteúdo no corpo.
+    h2{
+        padding: 50px 0px 10px 0px; // top - right - bottom - left
+        font-family: $fonte-logo;
+        font-size: $grande;
+        color: $cor-secundaria;
+        line-height: $extra-grande;
+        text-align: center;
+    }
+    .detalhes-produto{
+        display: flex;
+        gap: 30px;
+        img{
+            width: 100%;
+            margin-bottom: 20px;
+            
+        }
+        .descricao{
+            width: 100%;
+            ul{
+                font-family: $fonte-secundaria;
+                color: $cinza-medio;
+                font-size: $media;
+                line-height: $grande;
+                text-align: justify;
+                padding-top: 20px;
+            }
+            li{
+                padding-top: 10px;
+                font-family: $fonte-secundaria;
+            }
+        }
+    }
+}
